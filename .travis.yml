@@ -30,7 +30,7 @@ script:
   - git clone -b docker-model --single-branch https://github.com/AtzeDeVries/docker-nba-api
   - cd docker-nba-api
   # - git checkout -b $DOCKER_TAG
-   - cp -fr ~/payload/* ./
+  - cp -fr ~/payload/* ./
   # - git add *
   # - git commit -a -m 'automatic travis ci build'
   # - git push --set-upstream origin $DOCKER_TAG
