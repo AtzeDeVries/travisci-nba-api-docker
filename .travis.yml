@@ -27,13 +27,13 @@ before_script:
 
 script:
   - docker run --rm -v ~/payload:/payload -v ~/naturalis_data_api:/source --link es:es atzedevries/api-builder sh /build-nba-service.sh install-service
-  - git clone -b master --single-branch https://github.com/AtzeDeVries/docker-nba-api
+  - git clone -b docker-model --single-branch https://github.com/AtzeDeVries/docker-nba-api
   - cd docker-nba-api
-  - git checkout -b $DOCKER_TAG
-  - cp -fr ~/payload/* ./
-  - git add *
-  - git commit -a -m 'automatic travis ci build'
-  - git push --set-upstream origin $DOCKER_TAG
+  # - git checkout -b $DOCKER_TAG
+   - cp -fr ~/payload/* ./
+  # - git add *
+  # - git commit -a -m 'automatic travis ci build'
+  # - git push --set-upstream origin $DOCKER_TAG
   - docker build -t atzedevries/docker-nba-api:$DOCKER_TAG ./
 
 after_success:
